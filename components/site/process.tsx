@@ -50,37 +50,37 @@ export function Process() {
 
         <div ref={ref} className="relative mx-auto mt-12 max-w-3xl">
           {/* Track */}
-          <div className="absolute left-6 top-2 h-full w-px bg-white/10 md:left-1/2 md:-translate-x-1/2" />
+          <div className="absolute left-1/2 top-2 h-full w-px -translate-x-1/2 bg-white/10" />
           <div
             data-line
-            className="absolute left-6 top-2 h-full w-px scale-y-0 gradient-brand md:left-1/2 md:-translate-x-1/2"
+            className="absolute left-1/2 top-2 h-full w-px -translate-x-1/2 scale-y-0 gradient-brand"
           />
 
-          <div className="space-y-10">
+          <div className="space-y-8 md:space-y-10">
             {steps.map((s, i) => (
               <div
                 key={s.title}
                 data-step
-                className={`relative flex items-center gap-6 md:gap-0 ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                className={`relative flex items-center justify-between ${
+                  i % 2 === 0 ? "flex-row" : "flex-row-reverse"
                 }`}
               >
                 {/* Node */}
-                <div className="absolute left-6 z-10 grid h-12 w-12 -translate-x-1/2 place-items-center rounded-xl gradient-brand text-white shadow-lg md:left-1/2">
-                  <s.icon className="h-5 w-5" />
+                <div className="absolute left-1/2 z-10 grid h-10 w-10 md:h-12 md:w-12 -translate-x-1/2 place-items-center rounded-xl gradient-brand text-white shadow-lg">
+                  <s.icon className="h-4 w-4 md:h-5 md:w-5" />
                 </div>
 
                 {/* Card */}
-                <div className={`ml-16 w-full md:ml-0 md:w-[calc(50%-3rem)] ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <div className="rounded-2xl glass p-5 shadow-lg hover:shadow-[var(--shadow-glow)] transition-shadow">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                <div className={`w-[calc(50%-2rem)] md:w-[calc(50%-3rem)] ${i % 2 === 0 ? "md:pr-12 text-right" : "md:pl-12 text-left"}`}>
+                  <div className="rounded-2xl glass p-3 md:p-5 shadow-lg hover:shadow-[var(--shadow-glow)] transition-shadow">
+                    <span className="text-[10px] md:text-xs font-semibold uppercase tracking-wider text-cyan-400">
                       Step {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="mt-1 text-lg font-semibold text-foreground">{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                    <h3 className="mt-1 text-[13px] md:text-lg font-semibold text-foreground leading-snug md:leading-normal">{s.title}</h3>
+                    <p className="mt-1 md:mt-2 text-[11px] md:text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                   </div>
                 </div>
-                <div className="hidden md:block md:w-[calc(50%-3rem)]" />
+                <div className="w-[calc(50%-2rem)] md:w-[calc(50%-3rem)]" />
               </div>
             ))}
           </div>

@@ -45,7 +45,7 @@ export function Contact() {
           description="Tell us about your business and we'll craft a tailored plan to automate, digitize, and scale your operations."
         />
 
-        <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-5">
+        <div className="mx-auto mt-12 flex max-w-5xl flex-col-reverse gap-8 lg:grid lg:grid-cols-5">
           {/* Info */}
           <div className="flex flex-col gap-4 lg:col-span-2">
             {contactInfo.map((c) => (

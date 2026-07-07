@@ -116,7 +116,7 @@ export function WhyUs() {
 
         <div 
           ref={statsRef}
-          className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 rounded-3xl glass p-10 lg:px-16"
+          className="mt-12 grid grid-cols-2 md:flex md:flex-row items-center justify-between gap-8 rounded-3xl glass p-8 lg:p-10 lg:px-16"
         >
           {stats.map((s) => (
             <div key={s.label} className="text-center">

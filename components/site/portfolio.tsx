@@ -92,7 +92,7 @@ export function Portfolio() {
             >
               <MiniDashboard accent={p.accent} />
 
-              <div className="mt-5 flex items-start justify-between gap-4">
+              <div className="mt-5 flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <span className="text-xs font-medium uppercase tracking-wider text-cyan-400">
                     {p.industry}

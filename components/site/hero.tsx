@@ -92,9 +92,9 @@ export function Hero() {
   return (
     <section id="top" ref={ref} className="relative overflow-hidden pt-28 pb-8 md:pt-32 md:pb-12">
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative grid items-center gap-14 lg:grid-cols-12">
-        {/* Left */}
-        <div className="lg:col-span-7">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative flex flex-col lg:grid items-center gap-14 lg:grid-cols-12 pt-4 md:pt-10 lg:pt-0">
+        {/* Left Content */}
+        <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left w-full max-w-3xl mx-auto lg:mx-0">
           <span
             data-hero-badge
             className="inline-flex items-center gap-2 rounded-full glass border-border px-3 py-1.5 text-xs font-medium text-muted-foreground"
@@ -112,14 +112,14 @@ export function Hero() {
             </span>
           </h1>
 
-          <p data-hero-sub className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p data-hero-sub className="mt-6 max-w-2xl mx-auto lg:mx-0 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             We replace manual paperwork and spreadsheets with modern digital
             platforms — CRM, ERP, HRMS, inventory, and AI-powered automation
             tailored to how your business actually works.
           </p>
 
           {/* Rotating keywords */}
-          <div data-hero-sub className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
+          <div data-hero-sub className="mt-5 flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground">
             <span>We build</span>
             <span className="relative inline-flex h-6 min-w-[170px] overflow-hidden">
               {keywords.map((k, i) => (
@@ -137,23 +137,23 @@ export function Hero() {
             </span>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <div data-hero-cta>
-              <Magnetic strength={0.35}>
-                <a href="#contact" className={cn(buttonVariants(), "h-14 px-8 text-base bg-blue-500 hover:bg-blue-400 text-white rounded-full shadow-lg border-0 transition-colors")}>
-                  Book a Free Consultation <ArrowRight className="h-4 w-4 ml-2" />
+          <div className="mt-8 flex items-center justify-center lg:justify-start gap-2 sm:gap-4 w-full px-2 sm:px-0">
+            <div data-hero-cta className="flex-1 sm:flex-none flex justify-end lg:justify-start">
+              <Magnetic strength={0.35} className="w-full sm:w-auto">
+                <a href="#contact" className={cn(buttonVariants(), "w-full sm:w-auto h-12 px-2 sm:px-8 text-[11px] sm:text-base bg-blue-500 hover:bg-blue-400 text-white rounded-full shadow-lg border-0 transition-colors")}>
+                  Book a Free Consultation <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2" />
                 </a>
               </Magnetic>
             </div>
-            <div data-hero-cta>
-              <a href="#work" className={cn(buttonVariants({ variant: "outline" }), "h-14 px-8 text-base rounded-full glass border-border hover:bg-white/5")}>
-                <PlayCircle className="h-4 w-4 mr-2" /> View Our Work
+            <div data-hero-cta className="flex-1 sm:flex-none flex justify-start">
+              <a href="#work" className={cn(buttonVariants({ variant: "outline" }), "w-full sm:w-auto h-12 px-2 sm:px-8 text-[11px] sm:text-base rounded-full glass border-border hover:bg-white/5")}>
+                <PlayCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" /> View Our Work
               </a>
             </div>
           </div>
 
           {/* Trust */}
-          <div data-hero-trust className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <div data-hero-trust className="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-x-7 gap-y-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <ShieldCheck className="h-4 w-4 text-emerald-500" />
               SOC-2 ready & secure by design
@@ -168,13 +168,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div data-hero-trust className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-border pt-6">
+          <div data-hero-trust className="mt-10 grid max-w-2xl grid-cols-2 sm:grid-cols-3 gap-8 border-t border-border pt-8 mx-auto lg:mx-0 w-full">
             {[
               { v: "250+", l: "Projects shipped" },
               { v: "60%", l: "Avg. time saved" },
               { v: "10+", l: "Years experience" },
             ].map((s) => (
-              <div key={s.l}>
+              <div key={s.l} className="flex flex-col items-center lg:items-start">
                 <p className="text-2xl font-semibold text-gradient-brand">{s.v}</p>
                 <p className="mt-1 text-xs text-muted-foreground">{s.l}</p>
               </div>
@@ -182,8 +182,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right */}
-        <div data-hero-sub className="relative lg:col-span-5">
+        {/* Right Visual */}
+        <div data-hero-sub className="relative lg:col-span-5 w-full mx-auto mt-4 lg:mt-0">
           <HeroVisual />
         </div>
       </div>
