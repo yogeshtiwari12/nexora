@@ -11,7 +11,7 @@ import { Building2, Users, DollarSign, Briefcase, MoreHorizontal, Plus } from "l
 import { cn } from "@/lib/utils";
 
 const statusStyle: Record<string, string> = {
-  Enterprise: "bg-primary text-primary-foreground",
+  Enterprise: "bg-blue-400 text-white",
   "Mid-Market": "bg-info/10 text-info",
   Prospect: "bg-warning/15 text-warning-foreground",
   Inactive: "bg-secondary text-muted-foreground",
@@ -65,7 +65,7 @@ export default function CompaniesPage() {
         title="Companies"
         description="Enterprise accounts organized by segment, industry, and account owner."
         actions={
-          <Button size="sm" className="h-9 rounded-lg gap-1.5 gradient-primary text-white shadow-elevated" onClick={() => setAddModalOpen(true)}>
+          <Button size="sm" className="h-9 rounded-lg gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white shadow-elevated" onClick={() => setAddModalOpen(true)}>
             <Plus className="h-3.5 w-3.5" />New company
           </Button>
         }
@@ -74,10 +74,10 @@ export default function CompaniesPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {companyList.map((c) => (
           <div key={c.id} data-reveal className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-elevated">
-            <div className="absolute inset-x-0 top-0 h-1 gradient-primary opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary-soft text-[13px] font-bold text-primary">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-emerald-50 text-[13px] font-bold text-emerald-600">
                   {c.initials}
                 </div>
                 <div>
@@ -110,7 +110,7 @@ export default function CompaniesPage() {
                 <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">Account Manager</div>
                 <div className="mt-0.5 text-[12.5px] font-medium">{c.manager}</div>
               </div>
-              <div className="flex items-center gap-1.5 rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-semibold text-primary">
+              <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-600">
                 <Briefcase className="h-3 w-3" />{c.deals} deals
               </div>
             </div>
@@ -131,27 +131,27 @@ export default function CompaniesPage() {
               </DialogTitle>
             </DialogHeader>
           </div>
-          
+
           <form onSubmit={handleCreateCompany}>
             <div className="p-6 space-y-4 bg-white">
               <div className="space-y-1.5">
                 <label className="text-[13px] font-semibold text-slate-700">Company Name <span className="text-red-500">*</span></label>
-                <Input 
+                <Input
                   required
-                  placeholder="Acme Corp" 
+                  placeholder="Acme Corp"
                   className="h-10 rounded-xl bg-slate-50/50 border-slate-200"
                   value={newCompanyData.name}
-                  onChange={(e) => setNewCompanyData({...newCompanyData, name: e.target.value})}
+                  onChange={(e) => setNewCompanyData({ ...newCompanyData, name: e.target.value })}
                 />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-[13px] font-semibold text-slate-700">Industry</label>
-                  <select 
+                  <select
                     className="w-full h-10 rounded-xl bg-slate-50/50 border border-slate-200 px-3 text-sm text-slate-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                     value={newCompanyData.industry}
-                    onChange={(e) => setNewCompanyData({...newCompanyData, industry: e.target.value})}
+                    onChange={(e) => setNewCompanyData({ ...newCompanyData, industry: e.target.value })}
                   >
                     {uniqueIndustries.map(ind => (
                       <option key={ind} value={ind}>{ind}</option>
@@ -160,11 +160,11 @@ export default function CompaniesPage() {
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[13px] font-semibold text-slate-700">Account Manager</label>
-                  <Input 
-                    placeholder="John Doe" 
+                  <Input
+                    placeholder="John Doe"
                     className="h-10 rounded-xl bg-slate-50/50 border-slate-200"
                     value={newCompanyData.manager}
-                    onChange={(e) => setNewCompanyData({...newCompanyData, manager: e.target.value})}
+                    onChange={(e) => setNewCompanyData({ ...newCompanyData, manager: e.target.value })}
                   />
                 </div>
               </div>
@@ -172,28 +172,28 @@ export default function CompaniesPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-[13px] font-semibold text-slate-700">Annual Revenue</label>
-                  <Input 
-                    placeholder="$10M" 
+                  <Input
+                    placeholder="$10M"
                     className="h-10 rounded-xl bg-slate-50/50 border-slate-200"
                     value={newCompanyData.revenue}
-                    onChange={(e) => setNewCompanyData({...newCompanyData, revenue: e.target.value})}
+                    onChange={(e) => setNewCompanyData({ ...newCompanyData, revenue: e.target.value })}
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[13px] font-semibold text-slate-700">Employees</label>
-                  <Input 
+                  <Input
                     type="number"
-                    placeholder="1000" 
+                    placeholder="1000"
                     className="h-10 rounded-xl bg-slate-50/50 border-slate-200"
                     value={newCompanyData.employees || ""}
-                    onChange={(e) => setNewCompanyData({...newCompanyData, employees: Number(e.target.value)})}
+                    onChange={(e) => setNewCompanyData({ ...newCompanyData, employees: Number(e.target.value) })}
                   />
                 </div>
               </div>
             </div>
-            
+
             <div className="p-4 border-t border-slate-100 bg-slate-50/50 flex justify-end gap-2">
-              <Button 
+              <Button
                 type="button"
                 variant="ghost"
                 className="font-medium px-4 rounded-xl h-10"
@@ -201,7 +201,7 @@ export default function CompaniesPage() {
               >
                 Cancel
               </Button>
-              <Button 
+              <Button
                 type="submit"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm font-medium px-6 rounded-xl h-10"
               >
