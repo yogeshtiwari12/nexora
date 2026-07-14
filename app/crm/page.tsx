@@ -86,7 +86,7 @@ export default function Dashboard() {
     <PageShell>
       <PageHeader
         eyebrow="Executive Dashboard"
-        title={<>Good Evening, <span className="text-primary">Yogesh</span></>}
+        title={<>Good Evening, <span className="text-primary">{`Madan`}</span></>}
         description="Here's what's happening across Meridian today."
         actions={
           <>

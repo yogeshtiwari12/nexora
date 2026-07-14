@@ -19,7 +19,7 @@ export function PageHeader({ eyebrow, title, description, actions }: PageHeaderP
   return (
     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between mb-0">
       <div>
-        {eyebrow && <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-blue-600 mb-1">{eyebrow}</div>}
+        {eyebrow && <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-emerald-600 mb-1">{eyebrow}</div>}
         <h1 className="mt-1 text-3xl font-semibold tracking-tight text-foreground">{title}</h1>
         {description && <p className="mt-1.5 text-[14px] text-muted-foreground">{description}</p>}
       </div>
